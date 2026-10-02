@@ -1,8 +1,9 @@
 # Protocol P1: does sleep beat equal awake compute? (H1, rungs 1–2)
 
-*Status: **v1, approved by the owner 2026-10-02**. Not locked. Amendments are allowed until the lock
-commit; every amendment made before the lock will be listed in §10. No development or
-test runs have been made under this protocol.*
+*Status: **v1 + amendments 1–9, LOCKED 2026-10-02** (hashes in `P1_lock.json`).
+The development phase is complete (`reports/P1_dev.json`); no test-seed run was
+made before the lock. Any post-lock deviation is disclosed in the results report,
+not edited in here.*
 
 ## 1. Question
 
