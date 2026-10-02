@@ -78,6 +78,7 @@ class GatedConfig:
     # moves only if its step exceeds alpha*lam
     init: float = 0.01  # all four parameters start here
     noise_mask: tuple[float, float, float, float] = (1.0, 1.0, 1.0, 1.0)  # per (wm,gm,wc,gc)
+    freeze_gates: bool = False  # gates held fixed (the authors' "instructed" block)
 
     @classmethod
     def paper(cls, **kw) -> GatedConfig:
@@ -124,6 +125,8 @@ def lowe_step(theta, xm, xc, y, eta, xi, cfg: GatedConfig):
             held = np.abs(nv) - np.minimum(cfg.alpha * cfg.lam, np.abs(nv))
             nv = np.where(old == 0, np.sign(nv) * held, nv)
             new[:, j] = np.where(old * nv < 0, 0.0, nv)
+    if cfg.freeze_gates:
+        new[:, [G_M, G_C]] = theta[:, [G_M, G_C]]
     return new, grad
 
 

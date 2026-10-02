@@ -170,3 +170,12 @@ def test_nrt_learner_ops():
     assert not torch.equal(learner.net.resp.weight, w_before)
     assert torch.all(learner.net.gate == 0)
     assert learner.flops("grad", 4) > learner.flops("grad", 1) > learner.flops("shrink")
+
+
+def test_freeze_gates():
+    cfg = GatedConfig(freeze_gates=True)
+    theta = np.array([[1.0, 0.5, 0.3, 0.2]])
+    one = np.ones(1)
+    new, _ = lowe_step(theta, one * 0.4, one * 0.2, one, one * 0.0, np.full((1, 4), 0.1), cfg)
+    assert new[0, G_M] == 0.5 and new[0, G_C] == 0.2
+    assert new[0, W_M] != 1.0

@@ -108,3 +108,23 @@ def test_phases_are_deterministic():
     run_sleep(a, buf, SLEEP, np.random.default_rng(7))
     run_sleep(b, buf, SLEEP, np.random.default_rng(7))
     assert np.array_equal(a.theta, b.theta)
+
+
+def test_fit_to_budget_matches_flops():
+    from nautilus.phases import fit_to_budget, run_stages
+
+    net, buf = make()
+    awake_stages, _ = AWAKE.stages()
+    budget = 200 * awake_stages[0].step_flops(net)
+    sleep_stages, _ = SLEEP.stages()
+    plan = fit_to_budget(sleep_stages, net, budget)
+    led = run_stages(net.copy(), buf, plan, 1, np.random.default_rng(0))
+    assert abs(led.flops - budget) / budget < 0.02
+    led_a = run_stages(net.copy(), buf, fit_to_budget(awake_stages, net, budget), 1,
+                       np.random.default_rng(0))
+    assert led_a.flops == budget and led_a.steps == 200
+    assert led.steps > led_a.steps  # sleep's cheaper steps buy more of them
+
+
+def test_ablation_explicit_steps():
+    assert sum(s.n_steps for s in ablation(SLEEP, "replay", n_steps=77)) == 77
