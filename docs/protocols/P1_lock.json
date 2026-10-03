@@ -1,0 +1,22 @@
+{
+ "date": "2026-10-02",
+ "parent_commit": "808402b0cd1ee2c11c77d2be1849f7fd074e67b0",
+ "sha256": {
+  "configs/lowe2024_fitted_motion_means.csv": "fafc6fbefa583745b68189e4c8566e1736851b98e8a7b169931b36c0481ae7c9",
+  "configs/p1_design.json": "1831c6cd256f364fd4fc3f720e57407b618bde8aad53cb40b5d56ca8133c15cd",
+  "configs/p1_selected.json": "c87267e30e2ebe71dc76b0730aaf051715f5f92451e991a96bf7b0b8fe5ca359",
+  "docs/protocols/P1_sleep_vs_awake.md": "368e7832a9c9acccb626e550c9c18af60bb3c35e933f98008b76ecf63566d40b",
+  "requirements.txt": "0277a083a38dae379ad6c859a0803b1d8405bbd7c3ab4844623deaafe2318fe1",
+  "scripts/p1_analyse.py": "bb40acf6298a61ecbc0745ed524ce92e3550a65c0083bf5163bc7eb1abde5681",
+  "scripts/p1_test.py": "1652cdf9c43573002ed4efe32a76399ef5539b8611c43ff6f5a504383cbed017",
+  "src/nautilus/__init__.py": "e1150487e3731046a65b5a2e91bee163e7ebf6b11ffb44c7d9215be27f133017",
+  "src/nautilus/harness.py": "6be46120f9dc7226fcd2b3bbbf36e0279331928dea600276825705acc02ffbd5",
+  "src/nautilus/learners.py": "8fa48e858158644aef87ebb5f0f0fb130021deb3c97db721b6268036aea136fb",
+  "src/nautilus/measures.py": "5679c6e9b507d49fba91b60a391a018daee78540543dced2e102a05cddbb91f6",
+  "src/nautilus/p1.py": "e284e3dcfaa60c9013289153a7329ceb09b2bd8e0a9e05a80074ce6efc1dbd0b",
+  "src/nautilus/phases.py": "adbcf59c94b598bc87b82fb313a4e5aaf9a0caa7b09b5e4799598e431433fc18",
+  "src/nautilus/rung1.py": "b42a12897ce669ece718c6d0bacfce4f85ab700647c497af49e206721d04c66a",
+  "src/nautilus/rung2.py": "daa4bdda67dd3d9d8e289bc8a7170cc7f97c43b179ddbcc6c102f42b77eb6e20",
+  "src/nautilus/tasks.py": "809bdbd2e95d0e82fbd87996eda387078159a7f77c84b1493ecd1f6f381d7171"
+ }
+}

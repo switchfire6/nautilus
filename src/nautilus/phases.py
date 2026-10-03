@@ -22,7 +22,7 @@ Every step is counted as one update step, and its FLOPs are added to a ``Compute
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 import numpy as np
 
@@ -173,13 +173,14 @@ class SleepConfig:
         return [s for s in (nrem, rem) if s.n_steps > 0], self.n_cycles
 
 
-def ablation(sleep: SleepConfig, keep: str) -> list[Stage]:
-    """Single-ingredient version of ``sleep`` with the same number of steps.
+def ablation(sleep: SleepConfig, keep: str, n_steps: int | None = None) -> list[Stage]:
+    """Single-ingredient version of ``sleep`` with ``n_steps`` steps (default: the same
+    number of steps as ``sleep``).
 
     ``keep`` is ``replay``, ``noise`` or ``shrink``. Each step applies only that
     ingredient, at the strength it has in the full sleep phase.
     """
-    n = sleep.n_steps
+    n = sleep.n_steps if n_steps is None else n_steps
     if keep == "replay":
         return [Stage(n, replay=True, lr=sleep.lr, batch_size=sleep.batch_size)]
     if keep == "noise":
@@ -198,6 +199,32 @@ def ablation(sleep: SleepConfig, keep: str) -> list[Stage]:
                   shrink_group=sleep.shrink_group)
         ]
     raise ValueError(keep)
+
+
+def fit_to_budget(cycle: list[Stage], learner: PhaseLearner, flops_budget: float) -> list[Stage]:
+    """Repeat ``cycle`` and truncate its last repetition so that the counted FLOPs are as
+    close as possible to ``flops_budget`` (to within half of one step's FLOPs).
+
+    Steps that cost no FLOPs (an ingredient switched off) are kept but do nothing.
+    """
+    per_cycle = sum(st.n_steps * st.step_flops(learner) for st in cycle)
+    if per_cycle <= 0:
+        raise ValueError("a cycle must cost FLOPs")
+    full = int(flops_budget // per_cycle)
+    out = list(cycle) * full
+    left = flops_budget - full * per_cycle
+    for st in cycle:
+        f = st.step_flops(learner)
+        if f == 0:
+            continue
+        k = min(st.n_steps, int(np.floor(left / f + 0.5)))
+        if k <= 0:
+            break
+        out.append(replace(st, n_steps=k))
+        left -= k * f
+        if k < st.n_steps:
+            break
+    return out
 
 
 def run_awake(learner, buffer, cfg: AwakeConfig, rng) -> ComputeLedger:

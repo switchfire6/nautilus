@@ -1,0 +1,34 @@
+{
+ "r1": {
+  "awake": {
+   "kind": "awake",
+   "l1_mult": 0.0,
+   "lr": 0.6,
+   "name": "awake_lr0.6_l1x0.0_nzx0.0",
+   "noise_mult": 0.0
+  },
+  "sleep": {
+   "kind": "sleep",
+   "lr": 0.6,
+   "name": "sleep_lr0.6_shr0.0_remx1.0",
+   "rem_mult": 1.0,
+   "shrink": 0.0
+  }
+ },
+ "r2": {
+  "awake": {
+   "kind": "awake",
+   "l1_mult": 0.0,
+   "lr": 0.1,
+   "name": "awake_lr0.1_l1x0.0_nzx0.0",
+   "noise_mult": 0.0
+  },
+  "sleep": {
+   "kind": "sleep",
+   "lr": 0.1,
+   "name": "sleep_lr0.1_shr0.0_remx1.0",
+   "rem_mult": 1.0,
+   "shrink": 0.0
+  }
+ }
+}
