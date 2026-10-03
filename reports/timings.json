@@ -1,0 +1,108 @@
+{
+ "rung1_phases_99_nets": {
+  "awake": {
+   "examples_replayed": 1000,
+   "flops": 42000,
+   "replay_steps": 1000,
+   "steps": 1000,
+   "us_per_step": 122.46851300005801,
+   "wall_s": 0.12246851300005801
+  },
+  "budget_awake_vs_sleep": {
+   "equal": false,
+   "flops_a": 42000,
+   "flops_b": 28800,
+   "flops_equal": false,
+   "flops_ratio": 1.4583333333333333,
+   "steps_a": 1000,
+   "steps_b": 1000,
+   "steps_equal": true
+  },
+  "noise_only": {
+   "examples_replayed": 0,
+   "flops": 8000,
+   "replay_steps": 0,
+   "steps": 1000,
+   "us_per_step": 20.38409298984334,
+   "wall_s": 0.02038409298984334
+  },
+  "replay_only": {
+   "examples_replayed": 1000,
+   "flops": 26000,
+   "replay_steps": 1000,
+   "steps": 1000,
+   "us_per_step": 79.00619000429288,
+   "wall_s": 0.07900619000429288
+  },
+  "shrink_only": {
+   "examples_replayed": 0,
+   "flops": 8000,
+   "replay_steps": 0,
+   "steps": 1000,
+   "us_per_step": 9.703577001346275,
+   "wall_s": 0.009703577001346275
+  },
+  "sleep": {
+   "examples_replayed": 800,
+   "flops": 28800,
+   "replay_steps": 800,
+   "steps": 1000,
+   "us_per_step": 79.14403598988429,
+   "wall_s": 0.07914403598988429
+  }
+ },
+ "rung1_simulate_99_nets_s": 0.1741214020003099,
+ "rung2_phases_1_learner": {
+  "awake": {
+   "examples_replayed": 8000,
+   "flops": 1766052000,
+   "replay_steps": 1000,
+   "steps": 1000,
+   "us_per_step": 2794.45902002044,
+   "wall_s": 2.79445902002044
+  },
+  "budget_awake_vs_sleep": {
+   "equal": false,
+   "flops_a": 1766052000,
+   "flops_b": 1407381600,
+   "flops_equal": false,
+   "flops_ratio": 1.2548494310285143,
+   "steps_a": 1000,
+   "steps_b": 1000,
+   "steps_equal": true
+  },
+  "noise_only": {
+   "examples_replayed": 0,
+   "flops": 9100000,
+   "replay_steps": 0,
+   "steps": 1000,
+   "us_per_step": 231.3428070046939,
+   "wall_s": 0.2313428070046939
+  },
+  "replay_only": {
+   "examples_replayed": 8000,
+   "flops": 1747852000,
+   "replay_steps": 1000,
+   "steps": 1000,
+   "us_per_step": 2447.3146199889015,
+   "wall_s": 2.4473146199889015
+  },
+  "shrink_only": {
+   "examples_replayed": 0,
+   "flops": 9100000,
+   "replay_steps": 0,
+   "steps": 1000,
+   "us_per_step": 72.46868699439801,
+   "wall_s": 0.07246868699439801
+  },
+  "sleep": {
+   "examples_replayed": 6400,
+   "flops": 1407381600,
+   "replay_steps": 800,
+   "steps": 1000,
+   "us_per_step": 2087.330104986904,
+   "wall_s": 2.087330104986904
+  }
+ },
+ "torch_threads": 1
+}

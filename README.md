@@ -17,12 +17,15 @@ project tests the idea in small artificial learners, which run on a CPU:
 A nautilus shell grows by repeating its own shape at a larger scale: a complex
 form from a short rule.
 
-**Status:** stage S0 (literature check) done; S1 (engineering) next. See:
+**Status:** S0 (literature check) and S1 (engineering, rung-1 replication) done;
+S2 (first protocol) next. See:
 
 - the [project brief](docs/PROJECT_BRIEF.md) for the hypotheses, design and
   research rules;
 - [related work](docs/related_work.md) for what is already known, and the gap
-  this project tests.
+  this project tests;
+- the [S1 report](reports/S1_report.md) for the replication of Löwe et al. (2024)
+  and the engineering checks.
 
 **Predecessors** (same research discipline: pre-registered protocols, strong
 baselines, negatives reported):
