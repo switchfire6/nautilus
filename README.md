@@ -17,15 +17,17 @@ project tests the idea in small artificial learners, which run on a CPU:
 A nautilus shell grows by repeating its own shape at a larger scale: a complex
 form from a short rule.
 
-**Status:** S0 (literature check) and S1 (engineering, rung-1 replication) done;
-S2 (first protocol) next. See:
+**Status:** S0 and S1 done. **S2 (protocol P1) done: a calibrated negative.** At
+equal compute, a sleep-like offline phase helped exactly as much as awake practice
+on the same stored experiences, and the help came from replay alone. See:
 
 - the [project brief](docs/PROJECT_BRIEF.md) for the hypotheses, design and
   research rules;
 - [related work](docs/related_work.md) for what is already known, and the gap
   this project tests;
 - the [S1 report](reports/S1_report.md) for the replication of Löwe et al. (2024)
-  and the engineering checks.
+  and the engineering checks;
+- the [P1 results](reports/P1_results.md) for the sleep-versus-awake test (H1).
 
 **Predecessors** (same research discipline: pre-registered protocols, strong
 baselines, negatives reported):
