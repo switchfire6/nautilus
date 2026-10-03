@@ -19,7 +19,9 @@ form from a short rule.
 
 **Status:** S0 and S1 done. **S2 (protocol P1) done: a calibrated negative.** At
 equal compute, a sleep-like offline phase helped exactly as much as awake practice
-on the same stored experiences, and the help came from replay alone. See:
+on the same stored experiences, and the help came from replay alone. **P2 (H2) stopped
+at its development-stage futility check:** early internal compression did not predict
+which learners would have the insight. See:
 
 - the [project brief](docs/PROJECT_BRIEF.md) for the hypotheses, design and
   research rules;
@@ -27,7 +29,8 @@ on the same stored experiences, and the help came from replay alone. See:
   this project tests;
 - the [S1 report](reports/S1_report.md) for the replication of Löwe et al. (2024)
   and the engineering checks;
-- the [P1 results](reports/P1_results.md) for the sleep-versus-awake test (H1).
+- the [P1 results](reports/P1_results.md) for the sleep-versus-awake test (H1);
+- the [P2 result](reports/P2_dev_futility.md) for compression as a predictor (H2).
 
 **Predecessors** (same research discipline: pre-registered protocols, strong
 baselines, negatives reported):
